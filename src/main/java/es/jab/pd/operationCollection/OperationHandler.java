@@ -16,15 +16,22 @@ public class OperationHandler {
 	}
 	
 	public void add(Operation operation){
-		
+		this.operations.add(operation);
 	}
 	
 	public void reset(){
-		
+		this.operations.clear();
 	}
 	
 	public int total(){
-		return 0;
+		int result = 0;
+		String separator = "";
+		for(Operation operation : this.operations){
+			System.out.print(separator + "[" + operation.toString() + "]");
+			result += operation.operate();
+			separator = "+";
+		}
+		return result;
 	}
 
 }
