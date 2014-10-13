@@ -12,7 +12,7 @@ public class SummationTest {
 
 	@Before
 	public void before(){
-		summation = new Summation(3, 2);
+		summation = new Addition(3, 2);
 	}
 
 	@Test

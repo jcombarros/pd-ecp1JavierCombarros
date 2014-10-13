@@ -33,7 +33,7 @@ public class SubtractionTest {
 	
 	@Test
 	public void testEquals() {
-		Operation summation = new Summation(3, 2);
+		Operation summation = new Addition(3, 2);
 		assertEquals(false, subtraction.equals(summation));
 	}
 

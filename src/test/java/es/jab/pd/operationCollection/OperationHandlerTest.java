@@ -14,7 +14,7 @@ public class OperationHandlerTest {
 	@Before
 	public void before() {
 		operationHandler = new OperationHandler();
-		operationHandler.add(new Summation (2, 3));
+		operationHandler.add(new Addition (2, 3));
 	}
 
 	@Test
@@ -35,7 +35,7 @@ public class OperationHandlerTest {
 	@Test
 	public void testTotal() {
 		Operation subtraction = new Subtraction(4, 3);
-		Operation summation = new Summation(6, 5);
+		Operation summation = new Addition(6, 5);
 		operationHandler.add(subtraction);
 		operationHandler.add(summation);
 		assertEquals(17, operationHandler.total());

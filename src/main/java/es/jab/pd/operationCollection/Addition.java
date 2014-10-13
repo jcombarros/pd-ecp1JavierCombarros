@@ -1,12 +1,12 @@
 package es.jab.pd.operationCollection;
 
-public class Summation extends Operation {
+public class Addition extends Operation {
 
-	public Summation() {
+	public Addition() {
 		super();
 	}
 	
-	public Summation(int operator1, int operator2) {
+	public Addition(int operator1, int operator2) {
 		super(operator1, operator2);
 	}
 
