@@ -21,7 +21,7 @@ public class MultiplicationTest {
 
 	@Test
 	public void testToString() {
-		assertEquals("5*3", multiplication.toString());
+		assertEquals("3*5", multiplication.toString());
 	}
 	
 	@Test
