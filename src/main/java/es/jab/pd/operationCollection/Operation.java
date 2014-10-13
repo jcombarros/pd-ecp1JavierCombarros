@@ -2,8 +2,8 @@ package es.jab.pd.operationCollection;
 
 public abstract class Operation {
 	
-	private int operator1;
-	private int operator2;
+	protected int operator1;
+	protected int operator2;
 	
 	public Operation(){
 		this.operator1 = 1;

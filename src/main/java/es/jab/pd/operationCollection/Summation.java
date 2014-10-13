@@ -12,13 +12,13 @@ public class Summation extends Operation {
 
 	@Override
 	public int operate() {
-		return 0;
+		return this.operator1 + this.operator2;
 		
 	}
 
 	@Override
 	public String toString() {
-		return null;
+		return "" + this.operator1 + "+" + this.operator2;
 	}
 
 }
