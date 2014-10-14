@@ -5,9 +5,9 @@ import upm.jbb.IO;
 public class MainBiblioteca {
 
 	public static void main(String[] args) {
-		IO.in.addController(new GestorLibro());
-		IO.in.addController(new GestorUsuario());
-		IO.in.addController(new GestorPrestamo());
+		IO.in.addController(new LibroController());
+		IO.in.addController(new UsuarioController());
+		IO.in.addController(new PrestamoController());
 	}
 
 }

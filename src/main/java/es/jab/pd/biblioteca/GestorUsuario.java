@@ -11,11 +11,11 @@ private List<Usuario> usuarios;
 		this.usuarios = new ArrayList<Usuario>();
 	}
 	
-	public void darAltaUsuario(){
+	public void darAltaUsuario(Usuario usuario){
 		
 	}
 	
-	public void darBajaUsuario(){
+	public void darBajaUsuario(Usuario usuario){
 		
 	}
 	

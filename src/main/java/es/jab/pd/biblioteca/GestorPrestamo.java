@@ -15,16 +15,16 @@ public class GestorPrestamo {
 		
 	}
 	
-	public void devolverLibro(){
+	public void devolverLibro(Libro libro){
 		
 	}
 	
-	public void mostrarPrestamos(){
-		
+	public List<Prestamo> mostrarPrestamos(){
+		return null;
 	}
 	
-	public void mostrarPrestamoPorLibro(){
-		
+	public Prestamo mostrarPrestamoPorLibro(String isbn){
+		return null;
 	}
 
 }

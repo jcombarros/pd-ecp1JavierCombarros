@@ -15,16 +15,16 @@ public class GestorLibro {
 		
 	}
 	
-	public void darBajaLibro(){
+	public void darBajaLibro(Libro libro){
 		
 	}
 	
-	public void mostrarLibros(){
-		
+	public List<Libro> mostrarLibros(){
+		return null;
 	}
 	
-	public void mostrarLibro(){
-		
+	public Libro mostrarLibro(String isbn){
+		return null;
 	}
 
 }
