@@ -1,7 +1,9 @@
-package es.jab.pd.biblioteca;
+package es.jab.pd.biblioteca.service;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import es.jab.pd.biblioteca.model.Usuario;
 
 public class GestorUsuario {
 	

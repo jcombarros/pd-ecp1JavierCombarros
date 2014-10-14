@@ -1,4 +1,4 @@
-package es.jab.pd.biblioteca;
+package es.jab.pd.biblioteca.model;
 
 public class Libro {
 	

@@ -1,4 +1,6 @@
-package es.jab.pd.biblioteca;
+package es.jab.pd.biblioteca.controller;
+
+import es.jab.pd.biblioteca.service.GestorPrestamo;
 
 public class PrestamoController {
 	

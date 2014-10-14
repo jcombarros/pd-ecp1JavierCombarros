@@ -1,9 +1,13 @@
-package es.jab.pd.biblioteca;
+package es.jab.pd.biblioteca.service;
 
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import es.jab.pd.biblioteca.model.Libro;
+import es.jab.pd.biblioteca.model.Usuario;
+import es.jab.pd.biblioteca.service.GestorUsuario;
 
 public class GestorUsuarioTest {
 

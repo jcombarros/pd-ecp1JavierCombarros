@@ -1,5 +1,8 @@
 package es.jab.pd.biblioteca;
 
+import es.jab.pd.biblioteca.controller.LibroController;
+import es.jab.pd.biblioteca.controller.PrestamoController;
+import es.jab.pd.biblioteca.controller.UsuarioController;
 import upm.jbb.IO;
 
 public class MainBiblioteca {
