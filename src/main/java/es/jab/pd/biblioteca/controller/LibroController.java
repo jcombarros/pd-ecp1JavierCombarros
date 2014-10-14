@@ -21,24 +21,38 @@ public class LibroController {
 	}
 	
 	public void darBajaLibro(){
-		Libro libro = (Libro) IO.in.select((Libro[])gestorLibro.getLibros().toArray(), "Seleccionar un libro para eliminar: ");
-		gestorLibro.darBajaLibro(libro);
-		IO.out.println("Libro eliminado de la biblioteca.");
+		Libro libro = (Libro) IO.in.select((Libro[])gestorLibro.getLibros().toArray(new Libro[gestorLibro.getLibros().size()]), "Seleccionar un libro para eliminar: ");
+		if(gestorLibro.darBajaLibro(libro)){
+			IO.out.println("Libro eliminado de la biblioteca.");
+		}
+		else{
+			IO.out.println("Libro no encontrado.");
+		}
 		
 	}
 	
 	public void mostrarLibros(){
-		List<Libro> libros = gestorLibro.mostrarLibros();
+		List<Libro> libros = gestorLibro.mostrarLibros(); 
+		boolean hayLibros = false;
 		for(Libro libro : libros){
+			hayLibros = true;
 			IO.out.println("Libro: " + libro);
+		}
+		if(!hayLibros){
+			IO.out.println("Biblioteca sin libros.");
 		}
 	}
 	
 	public void mostrarLibro(){
 		//suponemos que recuperamos el isbn para usar el servicio de mostrarLibro() por isbn
-		String isbn = ((Libro) IO.in.select((Libro[])gestorLibro.getLibros().toArray(), "Seleccionar un libro para eliminar: ")).getIsbn();
+		String isbn = ((Libro) IO.in.select((Libro[])gestorLibro.getLibros().toArray(new Libro[gestorLibro.getLibros().size()]), "Seleccionar un libro para eliminar: ")).getIsbn();
 		Libro libro = gestorLibro.mostrarLibro(isbn);
-		IO.out.println("Libro seleccionado: " + libro.toString());
+		if(libro != null){
+			IO.out.println("Libro seleccionado: " + libro.toString());
+		}
+		else{
+			IO.out.println("Libro no encontrado.");
+		}
 	}
 
 }

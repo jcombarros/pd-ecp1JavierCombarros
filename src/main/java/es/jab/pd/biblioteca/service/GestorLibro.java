@@ -1,6 +1,7 @@
 package es.jab.pd.biblioteca.service;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import es.jab.pd.biblioteca.model.Libro;
@@ -22,19 +23,35 @@ public class GestorLibro {
 	}
 
 	public void darAltaLibro(Libro libro){
-		
+		this.libros.add(libro);
 	}
 	
-	public void darBajaLibro(Libro libro){
+	public boolean darBajaLibro(Libro libro){
+		boolean borrado = false;
+		for(Iterator<Libro> it = this.libros.iterator(); it.hasNext(); ){ 
+			Libro myLibro = (Libro) it.next();
+			if(myLibro.equals(libro)){
+				it.remove();
+				borrado = true;
+			}
+		}
+		return borrado;
 		
 	}
 	
 	public List<Libro> mostrarLibros(){
-		return null;
+		return this.libros;
 	}
 	
 	public Libro mostrarLibro(String isbn){
-		return null;
+		Libro libroAMostrar = null;
+		for(Iterator<Libro> it = this.libros.iterator(); it.hasNext(); ){ 
+			Libro myLibro = (Libro) it.next();
+			String myIsbn = myLibro.getIsbn();
+			if(myIsbn.equals(isbn)){
+				libroAMostrar = myLibro;
+			}
+		}
+		return libroAMostrar;
 	}
-
 }

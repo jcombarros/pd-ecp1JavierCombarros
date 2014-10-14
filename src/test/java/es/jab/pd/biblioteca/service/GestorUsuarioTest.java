@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import es.jab.pd.biblioteca.model.Libro;
+import es.jab.pd.biblioteca.model.Prestamo;
 import es.jab.pd.biblioteca.model.Usuario;
 import es.jab.pd.biblioteca.service.GestorUsuario;
 
@@ -25,7 +26,7 @@ public class GestorUsuarioTest {
 	public void darAltaUsuarioTest() {
 		Usuario usuario = new Usuario("Harry","Potter", "00001B");
 		gestorUsuario.darAltaUsuario(usuario);
-		assertSame(usuario, gestorUsuario.getUsuarios().get(gestorUsuario.getUsuarios().size()));
+		assertSame(usuario, gestorUsuario.getUsuarios().get(gestorUsuario.getUsuarios().size()-1));
 		
 	}
 	
@@ -35,7 +36,7 @@ public class GestorUsuarioTest {
 		gestorUsuario.darAltaUsuario(usuario);
 		
 		gestorUsuario.darBajaUsuario(usuario);
-		assertNotSame(usuario, gestorUsuario.getUsuarios().get(gestorUsuario.getUsuarios().size()));
+		assertNotSame(usuario, gestorUsuario.getUsuarios().get(gestorUsuario.getUsuarios().size()-1));
 		
 	}
 	
@@ -47,7 +48,7 @@ public class GestorUsuarioTest {
 		Usuario[] arrayUsuario = new Usuario[2];
 		arrayUsuario[0] = primerUsuario;
 		arrayUsuario[1] = usuario;
-		assertArrayEquals(arrayUsuario, (Libro[]) gestorUsuario.getUsuarios().toArray());
+		assertArrayEquals(arrayUsuario, (Usuario[]) gestorUsuario.getUsuarios().toArray(new Usuario[gestorUsuario.getUsuarios().size()]));
 		
 	}
 

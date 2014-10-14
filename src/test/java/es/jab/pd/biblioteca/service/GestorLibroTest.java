@@ -24,7 +24,7 @@ public class GestorLibroTest {
 	public void darAltaLibroTest() {
 		Libro libro = new Libro("0001","The Lord of the Rings", "RR Tolkien");
 		gestorLibro.darAltaLibro(libro);
-		assertSame(libro, gestorLibro.getLibros().get(gestorLibro.getLibros().size()));
+		assertSame(libro, gestorLibro.getLibros().get(gestorLibro.getLibros().size()-1));
 		
 	}
 	
@@ -34,7 +34,7 @@ public class GestorLibroTest {
 		gestorLibro.darAltaLibro(libro);
 		
 		gestorLibro.darBajaLibro(libro);
-		assertNotSame(libro, gestorLibro.getLibros().get(gestorLibro.getLibros().size()));
+		assertNotSame(libro, gestorLibro.getLibros().get(gestorLibro.getLibros().size()-1));
 		
 	}
 	
@@ -46,7 +46,7 @@ public class GestorLibroTest {
 		Libro[] arrayLibro = new Libro[2];
 		arrayLibro[0] = primerLibro;
 		arrayLibro[1] = libro;
-		assertArrayEquals(arrayLibro, (Libro[]) gestorLibro.getLibros().toArray());
+		assertArrayEquals(arrayLibro, (Libro[]) gestorLibro.getLibros().toArray(new Libro[gestorLibro.getLibros().size()]));
 		
 	}
 

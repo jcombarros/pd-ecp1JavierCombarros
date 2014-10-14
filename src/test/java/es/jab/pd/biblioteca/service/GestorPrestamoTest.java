@@ -58,7 +58,7 @@ public class GestorPrestamoTest {
 		Prestamo[] arrayPrestamos = new Prestamo[2];
 		arrayPrestamos[0] = primerPrestamo;
 		arrayPrestamos[1] = prestamo;
-		assertArrayEquals(arrayPrestamos, (Prestamo[]) gestorPrestamo.getPrestamos().toArray());
+		assertArrayEquals(arrayPrestamos, (Prestamo[]) gestorPrestamo.getPrestamos().toArray(new Prestamo[gestorPrestamo.getPrestamos().size()]));
 		
 	}
 
