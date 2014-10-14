@@ -8,10 +8,18 @@ public class GestorLibro {
 	private List<Libro> libros;
 	
 	public GestorLibro(){
-		this.libros = new ArrayList<Libro>();
+		this.setLibros(new ArrayList<Libro>());
 	}
 	
-	public void darAltaLibro(){
+	public List<Libro> getLibros() {
+		return libros;
+	}
+
+	public void setLibros(List<Libro> libros) {
+		this.libros = libros;
+	}
+
+	public void darAltaLibro(Libro libro){
 		
 	}
 	

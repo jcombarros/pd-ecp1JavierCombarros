@@ -8,10 +8,18 @@ public class GestorPrestamo {
 	private List<Prestamo> prestamos;
 	
 	public GestorPrestamo(){
-		this.prestamos = new ArrayList<Prestamo>();
+		this.setPrestamos(new ArrayList<Prestamo>());
 	}
 	
-	public void prestarLibro(){
+	public List<Prestamo> getPrestamos() {
+		return prestamos;
+	}
+
+	public void setPrestamos(List<Prestamo> prestamos) {
+		this.prestamos = prestamos;
+	}
+
+	public void prestarLibro(Prestamo prestamo){
 		
 	}
 	
@@ -23,7 +31,7 @@ public class GestorPrestamo {
 		return null;
 	}
 	
-	public Prestamo mostrarPrestamoPorLibro(String isbn){
+	public Prestamo mostrarPrestamoPorLibro(Libro libro){
 		return null;
 	}
 

@@ -8,9 +8,17 @@ public class GestorUsuario {
 private List<Usuario> usuarios;
 	
 	public GestorUsuario(){
-		this.usuarios = new ArrayList<Usuario>();
+		this.setUsuarios(new ArrayList<Usuario>());
 	}
 	
+	public List<Usuario> getUsuarios() {
+		return usuarios;
+	}
+
+	public void setUsuarios(List<Usuario> usuarios) {
+		this.usuarios = usuarios;
+	}
+
 	public void darAltaUsuario(Usuario usuario){
 		
 	}
