@@ -40,7 +40,7 @@ public class GestorLibro {
 	}
 	
 	public List<Libro> mostrarLibros(){
-		return this.libros;
+		return this.getLibros();
 	}
 	
 	public Libro mostrarLibro(String isbn){

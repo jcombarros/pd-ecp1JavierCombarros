@@ -16,8 +16,12 @@ public class LibroController {
 	
 	public void darAltaLibro(){
 		Libro libro = (Libro) IO.in.read(Libro.class, "Crear un nuevo Libro: ");
-		gestorLibro.darAltaLibro(libro);
-		IO.out.println("Libro añadido a la biblioteca.");
+		if(libro!=null){
+			gestorLibro.darAltaLibro(libro);
+			IO.out.println("Libro añadido a la biblioteca.");
+		}else{
+			IO.out.println("Libro no guardado.");
+		}
 	}
 	
 	public void darBajaLibro(){
@@ -36,7 +40,7 @@ public class LibroController {
 		boolean hayLibros = false;
 		for(Libro libro : libros){
 			hayLibros = true;
-			IO.out.println("Libro: " + libro);
+			IO.out.println("Libro: " + libro.toString());
 		}
 		if(!hayLibros){
 			IO.out.println("Biblioteca sin libros.");
