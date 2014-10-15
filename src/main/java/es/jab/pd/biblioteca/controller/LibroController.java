@@ -51,8 +51,7 @@ public class LibroController {
 	
 	public void mostrarLibro(){
 		//suponemos que recuperamos el isbn para usar el servicio de mostrarLibro() por isbn
-		String isbn = ((Libro) IO.in.select((Libro[])gestorLibro.getLibros().toArray(new Libro[gestorLibro.getLibros().size()]), "Seleccionar un libro para eliminar: ")).getIsbn();
-		Libro libro = gestorLibro.mostrarLibro(isbn);
+		Libro libro = ((Libro) IO.in.select((Libro[])gestorLibro.getLibros().toArray(new Libro[gestorLibro.getLibros().size()]), "Seleccionar un libro para eliminar: "));
 		if(libro != null){
 			IO.out.println("Libro seleccionado: " + libro.toString());
 		}
