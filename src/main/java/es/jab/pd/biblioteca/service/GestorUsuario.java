@@ -9,10 +9,19 @@ import es.jab.pd.biblioteca.model.Usuario;
 
 public class GestorUsuario {
 	
-private List<Usuario> usuarios;
+	private static GestorUsuario gestorUsuario = null;
+
+	private List<Usuario> usuarios;
 	
 	public GestorUsuario(){
 		this.setUsuarios(new ArrayList<Usuario>());
+	}
+	
+	public static GestorUsuario getInstance(){
+		if(GestorUsuario.gestorUsuario == null){
+			GestorUsuario.gestorUsuario = new GestorUsuario(); 
+		}
+		return GestorUsuario.gestorUsuario;
 	}
 	
 	public List<Usuario> getUsuarios() {

@@ -8,10 +8,19 @@ import es.jab.pd.biblioteca.model.Libro;
 
 public class GestorLibro {
 	
+	private static GestorLibro gestorLibro = null;
+	
 	private List<Libro> libros;
 	
 	public GestorLibro(){
 		this.setLibros(new ArrayList<Libro>());
+	}
+	
+	public static GestorLibro getInstance(){
+		if(GestorLibro.gestorLibro == null){
+			GestorLibro.gestorLibro = new GestorLibro(); 
+		}
+		return GestorLibro.gestorLibro;
 	}
 	
 	public List<Libro> getLibros() {

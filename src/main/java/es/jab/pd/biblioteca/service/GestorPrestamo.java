@@ -8,10 +8,19 @@ import es.jab.pd.biblioteca.model.Prestamo;
 
 public class GestorPrestamo {
 	
+	private static GestorPrestamo gestorPrestamo = null;
+	
 	private List<Prestamo> prestamos;
 	
 	public GestorPrestamo(){
 		this.setPrestamos(new ArrayList<Prestamo>());
+	}
+	
+	public static GestorPrestamo getInstance(){
+		if(GestorPrestamo.gestorPrestamo == null){
+			GestorPrestamo.gestorPrestamo = new GestorPrestamo(); 
+		}
+		return GestorPrestamo.gestorPrestamo;
 	}
 	
 	public List<Prestamo> getPrestamos() {
