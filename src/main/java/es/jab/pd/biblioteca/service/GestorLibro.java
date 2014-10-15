@@ -39,7 +39,7 @@ public class GestorLibro {
 		boolean borrado = false;
 		for(Iterator<Libro> it = this.libros.iterator(); it.hasNext(); ){ 
 			Libro myLibro = (Libro) it.next();
-			if(myLibro.equals(libro)){
+			if(myLibro.esIgual(libro)){
 				it.remove();
 				borrado = true;
 			}

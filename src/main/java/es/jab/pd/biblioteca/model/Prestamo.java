@@ -48,12 +48,12 @@ public class Prestamo {
 	
 	public String toString(){
 		return "Prestamo de" + this.libro.getTitulo() 
-				+ ", a " + this.usuario.getNombre() + ". Desde: " + this.fechaInicio + "hasta " + this.fechaFin;
+				+ ", a " + this.usuario.getNombre() + ". Desde: " + this.fechaInicio + " hasta " + this.fechaFin;
 	}
 	
-	public boolean equals(Object obj){
-		return this.libro.equals(((Prestamo)obj).libro) 
-				&& this.usuario.equals(((Prestamo)obj).usuario)
+	public boolean esIgual(Object obj){
+		return this.libro.esIgual(((Prestamo)obj).libro) 
+				&& this.usuario.esIgual(((Prestamo)obj).usuario)
 				&& this.fechaInicio == ((Prestamo) obj).fechaInicio
 				&& this.fechaFin == ((Prestamo) obj).fechaFin;
 	}

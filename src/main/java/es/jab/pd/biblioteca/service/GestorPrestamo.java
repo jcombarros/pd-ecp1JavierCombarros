@@ -1,10 +1,12 @@
 package es.jab.pd.biblioteca.service;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import es.jab.pd.biblioteca.model.Libro;
 import es.jab.pd.biblioteca.model.Prestamo;
+import es.jab.pd.biblioteca.model.Usuario;
 
 public class GestorPrestamo {
 	
@@ -32,19 +34,34 @@ public class GestorPrestamo {
 	}
 
 	public void prestarLibro(Prestamo prestamo){
-		
+		this.prestamos.add(prestamo);
 	}
 	
-	public void devolverLibro(Libro libro){
-		
+	public boolean devolverLibro(Libro libro){
+		boolean devuelto = false;
+		for(Iterator<Prestamo> it = this.prestamos.iterator(); it.hasNext(); ){ 
+			Prestamo myPrestamo = (Prestamo) it.next();
+			if(myPrestamo.getLibro().esIgual(libro)){
+				it.remove();
+				devuelto = true;
+			}
+		}
+		return devuelto;	
 	}
 	
 	public List<Prestamo> mostrarPrestamos(){
-		return null;
+		return this.getPrestamos();
 	}
 	
 	public Prestamo mostrarPrestamoPorLibro(Libro libro){
-		return null;
+		Prestamo prestamo = null;
+		for(Iterator<Prestamo> it = this.prestamos.iterator(); it.hasNext(); ){ 
+			Prestamo myPrestamo = (Prestamo) it.next();
+			if(myPrestamo.getLibro().esIgual(libro)){
+				prestamo = myPrestamo;
+			}
+		}
+		return prestamo;
 	}
 
 }

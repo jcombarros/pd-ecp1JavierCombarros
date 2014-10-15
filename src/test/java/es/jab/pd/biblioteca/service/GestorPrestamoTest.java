@@ -32,9 +32,9 @@ public class GestorPrestamoTest {
 	public void prestarLibroTest() {
 		Libro libro = new Libro("0001","The Lord of the Rings", "RR Tolkien");
 		Prestamo prestamo = new Prestamo(libro, usuario, "23/10/2014", "23/11/2014");
-		gestorPrestamo.prestarLibro(primerPrestamo);
+		gestorPrestamo.prestarLibro(prestamo);
 		
-		assertSame(prestamo, gestorPrestamo.getPrestamos().get(gestorPrestamo.getPrestamos().size()));
+		assertEquals(prestamo, gestorPrestamo.getPrestamos().get(gestorPrestamo.getPrestamos().size()-1));
 		
 	}
 	
@@ -42,10 +42,10 @@ public class GestorPrestamoTest {
 	public void devolverLibroTest() {
 		Libro libro = new Libro("0001","The Lord of the Rings", "RR Tolkien");
 		Prestamo prestamo = new Prestamo(libro, usuario, "23/10/2014", "23/11/2014");
-		gestorPrestamo.prestarLibro(primerPrestamo);
+		gestorPrestamo.prestarLibro(prestamo);
 		
 		gestorPrestamo.devolverLibro(libro);
-		assertNotSame(prestamo, gestorPrestamo.getPrestamos().get(gestorPrestamo.getPrestamos().size()));
+		assertNotSame(prestamo, gestorPrestamo.getPrestamos().get(gestorPrestamo.getPrestamos().size()-1));
 		
 	}
 	
@@ -53,7 +53,7 @@ public class GestorPrestamoTest {
 	public void mostrarPrestamosTest() {
 		Libro libro = new Libro("0001","The Lord of the Rings", "RR Tolkien");
 		Prestamo prestamo = new Prestamo(libro, usuario, "23/10/2014", "23/11/2014");
-		gestorPrestamo.prestarLibro(primerPrestamo);
+		gestorPrestamo.prestarLibro(prestamo);
 		
 		Prestamo[] arrayPrestamos = new Prestamo[2];
 		arrayPrestamos[0] = primerPrestamo;
@@ -66,7 +66,7 @@ public class GestorPrestamoTest {
 	public void mostrarPrestamoPorLibroTest() {
 		Libro libro = new Libro("0001","The Lord of the Rings", "RR Tolkien");
 		Prestamo prestamo = new Prestamo(libro, usuario, "23/10/2014", "23/11/2014");
-		gestorPrestamo.prestarLibro(primerPrestamo);
+		gestorPrestamo.prestarLibro(prestamo);
 		
 		assertEquals(prestamo, gestorPrestamo.mostrarPrestamoPorLibro(libro));
 		

@@ -12,7 +12,7 @@ public class UsuarioController {
 	private GestorUsuario gestorUsuario;
 	
 	public UsuarioController(){
-		this.gestorUsuario = new GestorUsuario();
+		this.gestorUsuario = GestorUsuario.getInstance();
 	}
 	
 	public void darAltaUsuario(){
@@ -39,9 +39,11 @@ public class UsuarioController {
 	public void mostrarUsuarios(){
 		List<Usuario> usuarios = gestorUsuario.mostrarUsuarios(); 
 		boolean hayUsuarios = false;
-		for(Usuario usuario : usuarios){
-			hayUsuarios = true;
-			IO.out.println("Usuario: " + usuario.toString());
+		if(usuarios!=null){
+			for(Usuario usuario : usuarios){
+				hayUsuarios = true;
+				IO.out.println("Usuario: " + usuario.toString());
+			}
 		}
 		if(!hayUsuarios){
 			IO.out.println("No hay usuarios en el sistema.");

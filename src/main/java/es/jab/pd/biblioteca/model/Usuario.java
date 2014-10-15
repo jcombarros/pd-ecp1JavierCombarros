@@ -40,7 +40,7 @@ public class Usuario {
 		return this.nombre + " " + this.apellido + ": " + this.dni;
 	}
 	
-	public boolean equals(Object obj){
+	public boolean esIgual(Object obj){
 		return this.nombre == ((Usuario) obj).nombre
 				&& this.apellido == ((Usuario) obj).apellido
 				&& this.dni == ((Usuario) obj).dni;

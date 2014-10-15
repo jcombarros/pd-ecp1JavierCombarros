@@ -11,7 +11,7 @@ public class LibroController {
 	private GestorLibro gestorLibro;
 	
 	public LibroController(){
-		this.gestorLibro = new GestorLibro();
+		this.gestorLibro = GestorLibro.getInstance();
 	}
 	
 	public void darAltaLibro(){
@@ -38,9 +38,11 @@ public class LibroController {
 	public void mostrarLibros(){
 		List<Libro> libros = gestorLibro.mostrarLibros(); 
 		boolean hayLibros = false;
-		for(Libro libro : libros){
-			hayLibros = true;
-			IO.out.println("Libro: " + libro.toString());
+		if(libros!=null){
+			for(Libro libro : libros){
+				hayLibros = true;
+				IO.out.println("Libro: " + libro.toString());
+			}
 		}
 		if(!hayLibros){
 			IO.out.println("Biblioteca sin libros.");

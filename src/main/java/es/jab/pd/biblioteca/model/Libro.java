@@ -40,7 +40,7 @@ public class Libro {
 		return this.isbn + ": " + this.titulo + ". By: " + this.autor;
 	}
 	
-	public boolean equals(Object obj){
+	public boolean esIgual(Object obj){
 		return this.isbn == ((Libro) obj).isbn
 				&& this.titulo == ((Libro) obj).titulo
 				&& this.autor == ((Libro) obj).autor;
